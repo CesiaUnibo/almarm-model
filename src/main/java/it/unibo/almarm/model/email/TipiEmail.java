@@ -1,0 +1,110 @@
+/*
+ * AlmaRM Model - Java represenation of the model AlmaRM is built on.
+ * Copyright (C) 2018  ALMA MATER STUDIORUM - Università di Bologna
+ *
+ * This file is part of AlmaRM Model.
+ *
+ * AlmaRM Model is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * AlmaRM Model is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with AlmaRM Model.  If not, see <https://www.gnu.org/licenses/>.
+ */
+package it.unibo.almarm.model.email;
+
+import it.unibo.almarm.model.accordi.Coorte;
+
+public enum TipiEmail {
+	NOMINA_STUDENTE(1L),
+	REGISTRAZIONE_INCOMING_STUDENTE(2L),
+	REGISTRAZIONE_INCOMING_STUDENTE_ACCOUNT_ESISTENTE(34L),
+	INVIO_TRANSCRIPT(13L),
+	RINNOVO_ACCORDO(3L),
+	ABILITA_DOC_MOD_RINNOVO_ACCORDO(29L),
+	ABILITA_DOC_CHIUDI_ACCORDO(30L),
+	PROROGA_ACCORDO(32L),
+	RESET_PASSWORD(35L),
+	STIPULA_ACCORDO(36L),
+	INCOMING_RICHIESTA_GESTIONE_LA(49L),
+	/*
+	 * per invio nomine a università partner
+	 */
+	NOMINE_CON_NOMINE(4L),
+	NOMINE_ACC_OP_CON_NOMINE(38L),
+	NOMINE_SENZA_NOMINE(5L),
+	NOMINE_ACC_OP_SENZA_NOMINE(39L),
+	/*
+	 * gestione learning agreement
+	 */
+	RIFIUTO_VALIDAZIONE_LA(6L),
+	VALIDAZIONE_LA(7L),
+	ESITO_APPROVAZIONE_LA(8L),
+	AVVISO_UPLOAD_LA_FIRMATO_DA_CCDS(25L),
+	AVVISO_LA_PRESENTATO_X_COORDINATORE(42L),
+	/*
+	 * gestione studenti outgoing
+	 */
+	RIFIUTO_DICHIARAZIONE_ARRIVO(9L),
+	VALIDAZIONE_DICHIARAZIONE_ARRIVO(11L),
+	NOTIFICA_VINCITORE(10L),
+	RIFIUTO_DICHIARAZIONE_RIENTRO(15L),
+	VALIDAZIONE_DICHIARAZIONE_RIENTRO(14L),
+	PRESENTAZIONE_CANDIDATURA(18L),
+	AVVISO_RINUNCIA_INTERNO(26L),
+	AVVISO_RINUNCIA_PARTNER(27L),
+	AVVISO_VALIDAZIONE_TDW(37L),
+	AVVISO_NUOVI_INFOSHEET(40L),
+	AVVISO_ACCETTAZIONE(41L),
+	AVVISO_PROLUNGAMENTO_PLACEMENT_A_PARTNER(43L),
+	ACCETTAZIONE_CANDIDATURA(46L),
+	
+	/*
+	 * incoming
+	 */
+	AVVISO_CARICAMENTO_ALLEGATO(48L),
+	
+	/*
+	 * pagamenti
+	 */
+	AVVISO_PAGAMENTO(16L),
+	AVVISO_RESTITUZIONE(28L),
+	AVVISO_RESTITUZIONE_TOTALE(31L),
+	AVVISO_RESTITUZIONE_REVOCA(33L),
+	
+	/*
+	 * gestione richieste di riconoscimento
+	 */
+	VALIDAZIONE_RR(19L),
+	RIFIUTO_VALIDAZIONE_RR(20L),
+	RIFIUTO_APPROVAZIONE_RR(21L),
+	APPROVAZIONE_RR(22L),
+	APPROVAZIONE_RR_CON_INTEGRATI(55L),
+	RIFIUTO_DEFINITIVO_RR(23L),
+	ARCHIVIAZIONE_RR(24L),
+	
+	/*
+	 * gestione staff
+	 */
+	REGISTRAZIONE_INCOMING_STAFF(44L),
+	REGISTRAZIONE_INCOMING_STAFF_ACCOUNT_ESISTENTE(45L),
+	RESET_PASSWORD_STAFF(47L), 
+	REGISTRAZIONE_INCOMING_STAFF_DOPPIO_ACCOUNT(50L),
+	REGISTRAZIONE_INCOMING_STAFF_DOPPIO_ACCOUNT_UNIBO_ESISTENTE(51L),
+	REGISTRAZIONE_INCOMING_STAFF_DOPPIO_ACCOUNT_STUDIO_ESISTENTE(52L),
+	REGISTRAZIONE_INCOMING_STAFF_DOPPIO_ACCOUNT_ENTRAMBI_ESISTENTI(53L),
+	AVVISO_CON_INFO_SU_APPROVAZIONE_INCOMING_STAFF(54L),
+	AVVISO_REFERENTE_INSERIMENTO_INCOMING_STAFF(56L),
+	AVVISO_RICHIESTA_COMPILAZIONE_OUTGOING_STAFF(57L)
+	;
+
+    private TipiEmail(Long id) {this.id = id;}
+	private Long id;
+	public Long getId() {return this.id;}
+}
